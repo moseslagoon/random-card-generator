@@ -18,11 +18,14 @@ var nStage = new Container();
 var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
 document.body.appendChild(renderer.view);
 
-var backgrounds;
+var backgrounds, borders;
+var phrase, noun;
+
 
 function init(){
 
     backgrounds = [];
+    borders = [];
 
     backgrounds.push(new Sprite.fromImage("Backgrounds/bg_1.jpg"));
     backgrounds.push(new Sprite.fromImage("Backgrounds/Scroll4.bmp"));
@@ -33,6 +36,13 @@ function init(){
     backgrounds.push(new Sprite.fromImage("Backgrounds/Desert.bmp"));
     backgrounds.push(new Sprite.fromImage("Backgrounds/Ice.bmp"));
     backgrounds.push(new Sprite.fromImage("Backgrounds/Steel.bmp"));
+
+    borders.push(new Sprite.fromImage("Borders/Rose.png"));
+
+    for(var i =0; i < backgrounds.length; i++){
+        backgrounds[i].width = canvasWidth;
+        backgrounds[i].height = canvasHeight;
+    }
 
     randomizeCard();
 
@@ -50,6 +60,7 @@ function load(){
         .add("Backgrounds/Desert.bmp")
         .add("Backgrounds/Ice.bmp")
         .add("Backgrounds/Steel.bmp")
+        .add("Borders/Rose.png")
         .load(init);
 }
 
@@ -64,7 +75,17 @@ function randomizeCard(){
 
     randomizeBackground();
 
+    // Gives background a nice faded out effect
+    var w = new Graphics();
+    w.beginFill(0xF0F0F0);
+    w.drawRect(0,0,canvasWidth, canvasHeight);
+    w.endFill();
+    w.alpha = 0.4;
+    nStage.addChild(w);
 
+    randomizePhrase();
+    randomizeNouns();
+    randomizeBorder();
     stage = nStage;
 }
 
@@ -72,6 +93,44 @@ function randomizeBackground(){
     // Background Selection
     var randomBG = Math.floor(Math.random() * backgrounds.length);
     nStage.addChild(backgrounds[randomBG]);
+}
+
+function randomizeBorder(){
+    var random = Math.floor(Math.random() * borders.length);
+    nStage.addChild(borders[random]);
+}
+
+function randomizePhrase(){
+    var random = Math.floor(Math.random() * Phrases.length);
+    phrase = new Text(
+        Phrases[0],
+        {fontFamily: "Arial",
+         fontSize: 32,
+         fill: "black",
+         wordWrap: true,
+         wordWrapWidth:350,
+         align: "center"}
+    );
+    phrase.anchor.set(0.5,0.5);
+    phrase.position.set(canvasWidth / 2, 300);
+    console.log(phrase.height);
+    nStage.addChild(phrase);
+}
+
+function randomizeNouns(){
+    var random = Math.floor(Math.random() * Nouns.length);
+    noun = new Text(
+        Nouns[random],
+        {fontFamily: "Arial",
+         fontSize: 32,
+         fill: "black",
+         wordWrap: true,
+         wordWrapWidth:350,
+         align: "center"}
+    );
+    noun.anchor.set(0.5,0);
+    noun.position.set(canvasWidth / 2, 300 + phrase.height - (phrase.height / 2));
+    nStage.addChild(noun);
 }
 
 load();
