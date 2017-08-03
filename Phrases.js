@@ -1,13 +1,15 @@
 const Phrases = [
 "Hope your day is filled with",
-"Hope your birthday is just like your",
-"Without you, life would be just like",
+"Hope your day is just like your",
+"Without you, life would just be",
 "Without you, I wouldn't have",
-"I love you as much as",
-"I was so excited about your birthday I forgot to bring your",
-"There's only one word to describe you,",
-"There's only one word to describe the feeling you give me,",
+"I love you as much as I love",
+"I was so excited about your birthday I forgot to bring you",
+"There's only one way to describe the feeling you give me,",
 "Thank you for the greatest gift of all,",
 "I can't imagine life without your",
-"Life without you is like the world without",
-"For your birthday I bought you"];
+"You make me see the good in this world, like",
+"Life without you is like a world without",
+"For this special day I bought you",
+"If I could give you one piece of advice, it would be: Remember",
+"It's over Anakin. I have"];
