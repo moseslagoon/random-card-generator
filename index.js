@@ -17,6 +17,41 @@ var stage = new Container();
 var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
 document.body.appendChild(renderer.view);
 
+var backgrounds;
+
+function init(){
+
+    backgrounds = [];
+
+    backgrounds.push(new Sprite.fromImage("images/bg_1.jpg"));
+
+    randomizeCard();
+
+    requestAnimationFrame(update);
+}
+
+function load(){
+    loader
+        .add("images/bg_1.jpg")
+        .load(init);
+}
+
+function update(){
+
+    renderer.render(stage);
+    requestAnimationFrame(update);
+}
+
+function randomizeCard(){
+    var nStage = new Container();
+
+    nStage.addChild(backgrounds[0]);
+
+    stage = nStage;
+}
+
+load();
+
 // var left = new Graphics();
 // left.beginFill(0xFF0000);
 // left.drawRect(0,0,60,700);
@@ -36,13 +71,3 @@ document.body.appendChild(renderer.view);
 // t.drawRect(150,550,200,75);
 // t.endFill();
 // stage.addChild(t);
-
-function init(){
-
-}
-
-function load(){
-    
-}
-
-renderer.render(stage);
