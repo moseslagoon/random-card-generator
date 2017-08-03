@@ -1,0 +1,11 @@
+ /*CSS File for the index page*/
+
+ canvas{
+    background-color: black;
+    float: left;
+}
+
+#ui{
+    float: left;
+    margin: 10px 0px 0px 10px;
+}
