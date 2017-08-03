@@ -23,7 +23,6 @@ const Nouns = [
 "Africa by Toto.",
 "Rhode Island.",
 "a bizarrely small giraffe.",
-"a bizarrely large giraffe.",
 "the planet Earth.",
 "Djbouti.",
 "school.",
@@ -35,4 +34,8 @@ const Nouns = [
 "Jesus Christ himself.",
 "being tired every dimmadarn day.",
 "happiness.",
-"dogs. Lot and lots of dogs!"];
+"dogs. Lot and lots of dogs!",
+"spoopy skeletons",
+"a warm apple pie on a nice summer day"
+"grandma's old fruit cake",
+"creepy mustaches"];

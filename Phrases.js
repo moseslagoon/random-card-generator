@@ -12,4 +12,10 @@ const Phrases = [
 "Life without you is like a world without",
 "For this special day I bought you",
 "If I could give you one piece of advice, it would be: Remember",
-"It's over Anakin. I have"];
+"It's over Anakin. I have",
+"I love you for so many reasons, especially",
+"Through this and thin I can always rely on your love for"
+"You remind me to always be thankful for",
+"I wrote you a love song, I call it"
+"If you and I had a love song, it would be called"
+"To a special friend, who always brought me"];
