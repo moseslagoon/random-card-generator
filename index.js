@@ -14,6 +14,7 @@ var canvasWidth = 500;
 var canvasHeight = 700;
 
 var stage = new Container();
+var nStage = new Container();
 var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
 document.body.appendChild(renderer.view);
 
@@ -23,7 +24,15 @@ function init(){
 
     backgrounds = [];
 
-    backgrounds.push(new Sprite.fromImage("images/bg_1.jpg"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/bg_1.jpg"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Scroll4.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Wood.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Blizzard.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/BurntWater.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Clouds.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Desert.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Ice.bmp"));
+    backgrounds.push(new Sprite.fromImage("Backgrounds/Steel.bmp"));
 
     randomizeCard();
 
@@ -32,7 +41,15 @@ function init(){
 
 function load(){
     loader
-        .add("images/bg_1.jpg")
+        .add("Backgrounds/bg_1.jpg")
+        .add("Backgrounds/Scroll4.bmp")
+        .add("Backgrounds/Wood.bmp")
+        .add("Backgrounds/Blizzard.bmp")
+        .add("Backgrounds/BurntWater.bmp")
+        .add("Backgrounds/Clouds.bmp")
+        .add("Backgrounds/Desert.bmp")
+        .add("Backgrounds/Ice.bmp")
+        .add("Backgrounds/Steel.bmp")
         .load(init);
 }
 
@@ -43,11 +60,18 @@ function update(){
 }
 
 function randomizeCard(){
-    var nStage = new Container();
+    nStage.removeChildren();
 
-    nStage.addChild(backgrounds[0]);
+    randomizeBackground();
+
 
     stage = nStage;
+}
+
+function randomizeBackground(){
+    // Background Selection
+    var randomBG = Math.floor(Math.random() * backgrounds.length);
+    nStage.addChild(backgrounds[randomBG]);
 }
 
 load();
