@@ -15,16 +15,40 @@
     <body>
         <div align="left" id="myCanvas" > </div>
         
-        <div align="right" id="ui">
-            <button><img src="Buttons/LockButton.png" id="lock" width="11" height="12"></button>
-            <button><img src="Buttons/UnlockButton.png" id="unlock" width="11" height="12"></button>
-            Caption:<button type="button" onclick="alert('Hello, World!')">Lock!</button>
-            <button>Random</button><br>
-            Phrase1: <button>Lock!</button>
-                     <button>Random!</button><br>
-            Phrase2: <button>Lock!</button>
-                     <button>Random!</button><br>
-            Signature:<textarea>Howdy, there!</textarea>
+        <div align="left" id="ui">
+            <div>
+                <p class="inline">Caption</p>
+            </div>
+            <section>
+                <h1 style="margin-bottom: -5" align="center"> <u>Graphics</u> </h1>
+                <div>
+                    <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
+                    <p class="inline">Background Image</p>
+                    <button class="inline">Random</button>
+                </div>
+                <div>
+                    <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
+                    <p class="inline">Border</p>
+                    <button class="inline">Random</button>
+                </div>
+            </section>
+            <section>
+                <h1 style="margin-bottom: -5" align="center"> <u>Text</u> </h1>
+                <div>
+                    <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
+                    <p class="inline">Phrase</p>
+                    <button class="inline">Random</button>
+                </div>
+                <div>
+                    <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
+                    <p class="inline">Punchline</p>
+                    <button class="inline">Random</button>
+                </div>
+                <div style="margin-top: 50">
+                    <h2>Signature</h2>
+                    <textarea>Howdy, there!</textarea>
+                </div>
+            </section>
             
             <!-- Dropdown for greeting -->
         </div>
