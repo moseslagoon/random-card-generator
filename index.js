@@ -26,6 +26,7 @@ var borderLock = false;
 var bgLock = false;
 var dd;
 
+var words;//covfefe
 
 function init(){
 
@@ -121,6 +122,14 @@ function randomizeCard(){
         
 
     if(!nounLock)randomizeNouns();
+     if (noun.text == "covfefe"){
+        words = phrase.text.split(" ");
+        phrase.text = "";
+        for (var i = 0; i < wordcount.length / 2;i++){
+            phrase.text = phrase.text.concat(words[i]);
+        } 
+	    phrase.text = phrase.text.concat(noun.text);
+    }
     phrase.text = phrase.text.replace("<noun>", noun.text);
     phrase.text = phrase.text.replace("!.", "!");
     phrase.text = phrase.text.replace("?.", "?");
