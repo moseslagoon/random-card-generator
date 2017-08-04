@@ -36,6 +36,6 @@ const Nouns = [
 "happiness.",
 "dogs. Lot and lots of dogs!",
 "spoopy skeletons",
-"a warm apple pie on a nice summer day"
+"a warm apple pie on a nice summer day",
 "grandma's old fruit cake",
 "creepy mustaches"];
