@@ -140,8 +140,8 @@ function randomizeNouns(){
          wordWrapWidth:350,
          align: "center"}
     );
-    noun.anchor.set(0.5,0);
-    noun.position.set(canvasWidth / 2, phrase.position.y + phrase.height - (phrase.height / 2) + 2);
+    //noun.anchor.set(0.5,0);
+    //noun.position.set(canvasWidth / 2, phrase.position.y + phrase.height - (phrase.height / 2) + 2);
     //nStage.addChild(noun);
 }
 
@@ -159,7 +159,7 @@ function randomizeCaption(){
         }
     );
     caption.anchor.set(0.5,0.5);
-    caption.position.set(canvasWidth / 2, 150);
+    caption.position.set(canvasWidth / 2, 175);
     nStage.addChild(caption);
 }
 
