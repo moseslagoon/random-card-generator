@@ -28,6 +28,8 @@ var dd;
 
 var words;//covfefe
 
+var oldphrase;
+
 function init(){
 
     backgrounds = [];
@@ -116,9 +118,16 @@ function randomizeCard(){
     w.alpha = 0.4;
     nStage.addChild(w);
 
-    if(!borderLock)randomizeBorder();
-    if(!phraseLock)
+    if(!borderLock){
+        randomizeBorder();
+    }
+    if(!phraseLock){
         randomizePhrase();
+        oldphrase = phrase;//This stores the phrase with <noun> tag.
+    }
+    else{
+        phrase.text = oldphrase;//This sets the phrase <noun> tags to be replaced again, with possibly new noun.
+    }
         
 
     if(!nounLock)randomizeNouns();
