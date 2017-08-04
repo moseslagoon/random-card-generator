@@ -38,4 +38,6 @@ const Nouns = [
 "spoopy scary skeletons",
 "a warm apple pie on a nice summer day",
 "your grandma's old fruit cake",
-"creepy mustaches"];
+"creepy mustaches",
+"millions of peaches",
+"HOOPLA!"];
