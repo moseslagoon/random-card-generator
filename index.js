@@ -36,6 +36,20 @@ function init(){
     borders = [];
 
     makeDropdown();
+    signature = new Text(
+        "",
+        {
+            fontFamily: "Arial",
+            fontSize: 32,
+            fill: "black",
+            fontWeight: 'lighter',
+            wordWrap: true,
+            wordWrapWidth: 300,
+            align: "center"
+        }
+    )
+    signature.anchor.set(0.5,0.5);
+    signature.position.set(canvasWidth / 2, 515);
 
     backgrounds.push(new Sprite.fromImage("Backgrounds/bg_1.jpg"));
     backgrounds.push(new Sprite.fromImage("Backgrounds/Scroll4.bmp"));
@@ -150,6 +164,7 @@ function randomizeCard(){
     nStage.addChild(border);
     nStage.addChild(caption);
     nStage.addChild(phrase);
+    nStage.addChild(signature);
     stage = nStage;
 }
 
@@ -293,7 +308,10 @@ function lockHit(num){
 }
 
 function changeSignature(){
-
+    console.log("BILL BILL");
+    var sig = document.getElementById("sigbox");
+    signature.text = sig.value;
+    stage.addChild(signature);
 }
 
 load();

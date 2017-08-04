@@ -31,5 +31,25 @@
     padding-bottom: 2px;
 }
 #btn{
-	background-image: url("Buttons/btn-back-orange.png");
+    margin-top: 25px;
+    background-image: url("Buttons/btn-back-orange.png");
+    width: 250px;
+    height: 43px;
+    font-size: 24;
+    font-style: 0xFFFFFF;
+}
+
+textarea[type=text]:focus {
+    border: 3px solid #555;
+}
+
+p, h1, h2, textarea{
+    font-family: "Tahoma";
+}
+
+textarea{
+    width: 250px;
+    height: 100px;
+    padding: 5px 5px 5px 5px;
+    font-size: 16px;
 }
