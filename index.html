@@ -16,30 +16,31 @@
         <div align="left" id="myCanvas" > </div>
         
         <div align="left" id="ui">
-            <div>
+            <div id="captionDiv">
                 <p class="inline">Caption</p>
             </div>
-            <section>
+            <div>
                 <h1 style="margin-bottom: -5" align="center"> <u>Graphics</u> </h1>
-                <div>
+                <div class="OptionHolder">
                     <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
                     <p class="inline">Background Image</p>
                     <button class="inline" id="btn">Random</button>
+                    <button class="inline" onclick="randomizeCard()">Random</button>
                 </div>
-                <div>
+                <div class="OptionHolder">
                     <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
                     <p class="inline">Border</p>
                     <button class="inline" id="btn">Random</button>
                 </div>
-            </section>
-            <section>
+            </div>
+            <div>
                 <h1 style="margin-bottom: -5" align="center"> <u>Text</u> </h1>
-                <div>
+                <div class="OptionHolder">
                     <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
                     <p class="inline">Phrase</p>
                     <button class="inline" id="btn">Random</button>
                 </div>
-                <div>
+                <div class="OptionHolder">
                     <input type="image" src="Buttons/UnlockButton.png" class="inline , lock" />
                     <p class="inline">Punchline</p>
                     <button class="inline" id="btn">Random</button>
@@ -48,7 +49,7 @@
                     <h2>Signature</h2>
                     <textarea>Howdy, there!</textarea>
                 </div>
-            </section>
+            </div>
             
             <!-- Dropdown for greeting -->
         </div>

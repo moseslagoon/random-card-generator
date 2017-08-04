@@ -20,12 +20,16 @@ var c = document.getElementById("myCanvas").appendChild(renderer.view);
 
 var backgrounds, borders;
 var phrase, noun, caption;
+var dd;
 
+var words;//covfefe
 
 function init(){
 
     backgrounds = [];
     borders = [];
+
+    makeDropdown();
     
 
     backgrounds.push(new Sprite.fromImage("Backgrounds/bg_1.jpg"));
@@ -43,11 +47,26 @@ function init(){
     borders.push(new Sprite.fromImage("Borders/Hearts.png"));
     borders.push(new Sprite.fromImage("Borders/Circuit.png"));
     borders.push(new Sprite.fromImage("Borders/Emoji.png"));
+    borders.push(new Sprite.fromImage("Borders/Stars.png"));
 
     for(var i =0; i < backgrounds.length; i++){
         backgrounds[i].width = canvasWidth;
         backgrounds[i].height = canvasHeight;
     }
+    
+    caption = new Text(
+        dd.value,
+        {
+            fontFamily: "Palatino Linotype",
+            fontSize: 40,
+            fill: "black",
+            wordWrap: true,
+            wordWrapWidth: 350,
+            align: "center"
+        }
+    );
+    caption.anchor.set(0.5,0.5);
+    caption.position.set(canvasWidth / 2, 175);
 
     randomizeCard();
 
@@ -70,6 +89,7 @@ function load(){
         .add("Borders/Hearts.png")
         .add("Borders/Circuit.png")
         .add("Borders/Emoji.png")
+        .add("Borders/Stars.png")
         .load(init);
 }
 
@@ -93,14 +113,25 @@ function randomizeCard(){
     nStage.addChild(w);
 
     randomizeBorder();
-    randomizeCaption();
+    //randomizeCaption();
     randomizePhrase();
     randomizeNouns();
     console.log(phrase.text);
     console.log(noun.text);
+
+    if (noun.text == "covfefe"){
+        words = phrase.text.split(" ");
+        phrase.text = "";
+        for (var i = 0; i < wordcount.length / 2;i++){
+            phrase.text = phrase.text.concat(words[i]);
+        } 
+	phrase.text = phrase.text.concat(noun.text);
+    }
+
     phrase.text = phrase.text.replace("<noun>", noun.text);
     phrase.text = phrase.text.replace("!.", "!");
     phrase.text = phrase.text.replace("?.", "?");
+    nStage.addChild(caption);
     nStage.addChild(phrase);
     stage = nStage;
 }
@@ -134,7 +165,7 @@ function randomizePhrase(){
 function randomizeNouns(){
     var random = Math.floor(Math.random() * Nouns.length);
     noun = new Text(
-        Nouns[0],
+        Nouns[random],
         {fontFamily: "Georgia",
          fontSize: 32,
          fill: "black",
@@ -166,11 +197,34 @@ function randomizeCaption(){
 }
 
 function makeDropdown(){
-    
+    dd = document.createElement("select");
+    dd.setAttribute("onchange","setCaption()");
+    for(var i = 0; i < Captions.length; i++){
+        var o = document.createElement("option");
+        o.setAttribute("value", Captions[i]);
+        var t = document.createTextNode(Captions[i]);
+        o.appendChild(t);
+        dd.appendChild(o);
+    }
+    document.getElementById("captionDiv").appendChild(dd);
 }
 
 function setCaption(){
-    
+    stage.removeChild(caption);
+    caption = new Text(
+        dd.value,
+        {
+            fontFamily: "Palatino Linotype",
+            fontSize: 40,
+            fill: "black",
+            wordWrap: true,
+            wordWrapWidth: 350,
+            align: "center"
+        }
+    );
+    caption.anchor.set(0.5,0.5);
+    caption.position.set(canvasWidth / 2, 175);
+    stage.addChild(caption);
 }
 
 load();

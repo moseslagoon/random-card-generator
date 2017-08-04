@@ -30,7 +30,7 @@ const Phrases = [
 "Shh... don't say anything, I understand everything now, even <noun>.",
 "Without you, I would have no idea how to deal with <noun>.",
 "We could be happy ever after... Just you, me, and <noun>.",
-"You've always been my favorite I superhero, well... next to <noun>.",
+"You've always been my favorite superhero, well... next to <noun>.",
 "I wrote you a love song, I call it <noun>.",
 "If you and I had a love song, it would be called <noun>.",
 "To a special friend, who always brought me <noun>."];
