@@ -7,9 +7,10 @@ const Captions = [
     "Feel Better Soon!",
     "Merry Christmas!",
     "Happy Chanukah!",
+    "Happy Kwanzaa",
     "Happy Thanksgiving!",
     "Thinking of You",
     "I'm Sorry",
     "Thank You",
-    "You've Been Bamboozled"
+    "You've Been Bamboozled!"
 ];

@@ -26,6 +26,8 @@ var borderLock = false;
 var bgLock = false;
 var dd;
 
+var image = "";
+
 var words;//covfefe
 
 var oldphrase;
@@ -235,6 +237,7 @@ function randomizeCaption(){
 function makeDropdown(){
     dd = document.createElement("select");
     dd.setAttribute("onchange","setCaption()");
+    dd.setAttribute("id","soflow");
     for(var i = 0; i < Captions.length; i++){
         var o = document.createElement("option");
         o.setAttribute("value", Captions[i]);
@@ -274,7 +277,7 @@ function setCaption(){
         case "Happy Chanukah!":
             color = "#376e6f";
             break;
-        case "Happy Quanza!":
+        case "Happy Kwanzaa!":
             color = "#376e6f";
             break;
         case "Happy Thanksgiving!":
@@ -289,7 +292,7 @@ function setCaption(){
         case "Thank You":
             color = "#c6e16f";
             break;
-        case "You've Been Bamboozled":
+        case "You've Been Bamboozled!":
             color = "#e3e1de";
             break;
         default:
@@ -353,24 +356,18 @@ function changeSignature(){
     stage.addChild(signature);
 }
 
+function extractRegion(){
+    var sourceCanvas = c;
+    var sourceContext = sourceCanvas.getContext('2d');
+    var extractCanvas = document.createElement('canvas');
+    var extractContext = extractCanvas.getContext('2d');
+    var imageData = sourceContext.getImageData(0, 0, canvasWidth, canvasHeight);
+    
+    extractCanvas.width = canvasWidth;
+    extractCanvas.height = canvasHeight;
+    extractContext.putImageData(imageData, 0, 0);
+    image = extractCanvas.toDataURL();
+    window.open(image);
+}
+
 load();
-
-// var left = new Graphics();
-// left.beginFill(0xFF0000);
-// left.drawRect(0,0,60,700);
-// left.drawRect(440,0,60,700);
-// left.drawRect(0,0,500,60);
-// left.drawRect(0,640,500,60);
-// left.drawRect(0,550,125,150);
-// left.drawRect(375,550,125,150);
-// left.endFill();
-// stage.addChild(left);
-
-// var t = new Graphics();
-// t.beginFill(0x0000FF);
-// t.drawRect(75,75,350,125);
-// t.drawRect(75,300,350,100);
-// t.drawRect(75,425,350,100);
-// t.drawRect(150,550,200,75);
-// t.endFill();
-// stage.addChild(t);
