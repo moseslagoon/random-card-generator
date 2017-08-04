@@ -18,8 +18,14 @@
     display: inline-block;
 }
 
+.OptionHolder {
+    display: flex;
+    align-items: center;
+}
+
 .lock{
-    width: 11;
-    height: 12;
+    width: 30;
+    height: 28;
     margin-right: 5px;
+    padding-bottom: 2px;
 }
