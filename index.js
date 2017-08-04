@@ -123,7 +123,7 @@ function randomizePhrase(){
          align: "center"}
     );
     phrase.anchor.set(0.5,0.5);
-    phrase.position.set(canvasWidth / 2, 375);
+    phrase.position.set(canvasWidth / 2, 350);
     nStage.addChild(phrase);
 }
 
@@ -157,7 +157,7 @@ function randomizeCaption(){
         }
     );
     caption.anchor.set(0.5,0.5);
-    caption.position.set(canvasWidth / 2, 175);
+    caption.position.set(canvasWidth / 2, 150);
     nStage.addChild(caption);
 }
 
