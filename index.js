@@ -99,7 +99,9 @@ function randomizeCard(){
     console.log(phrase.text);
     console.log(noun.text);
     phrase.text = phrase.text.replace("<noun>", noun.text);
-        nStage.addChild(phrase);
+    phrase.text = phrase.text.replace("!.", "!");
+    phrase.text = phrase.text.replace("?.", "?");
+    nStage.addChild(phrase);
     stage = nStage;
 }
 
