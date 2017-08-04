@@ -14,9 +14,8 @@ const Phrases = [
 "I love you for so many reasons, especially",
 "Through this and thin I can always rely on your love for",
 "You remind me to always be thankful for",
-<<<<<<< HEAD
-"I wrote you a love song, I call it"
-"If you and I had a love song, it would be called"
+"I wrote you a love song, I call it",
+"If you and I had a love song, it would be called",
 "To a special friend, who always brought me",
 "You've always brought the greatest gift of all to my life:",
 "You were the one who finally made me understand",
