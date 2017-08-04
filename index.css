@@ -9,3 +9,17 @@
     float: left;
     margin: 10px 0px 0px 10px;
 }
+
+.sectionUI{
+    display: inline-block;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.lock{
+    width: 11;
+    height: 12;
+    margin-right: 5px;
+}

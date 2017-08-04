@@ -124,7 +124,6 @@ function randomizePhrase(){
     );
     phrase.anchor.set(0.5,0.5);
     phrase.position.set(canvasWidth / 2, 375);
-    console.log(phrase.height);
     nStage.addChild(phrase);
 }
 
