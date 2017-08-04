@@ -8,7 +8,8 @@ const Captions = [
     "Merry Christmas!",
     "Happy Chanukah!",
     "Happy Thanksgiving!",
-    "Thinking of you",
+    "Thinking of You",
     "I'm Sorry",
-    "Thank You"
+    "Thank You",
+    "You've Been Bamboozled"
 ];

@@ -19,7 +19,11 @@ var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
 var c = document.getElementById("myCanvas").appendChild(renderer.view);
 
 var backgrounds, borders;
-var phrase, noun, caption;
+var phrase, noun, caption, border, background;
+var phraseLock = false;
+var nounLock = false;
+var borderLock = false;
+var bgLock = false;
 var dd;
 
 var words;//covfefe
@@ -30,7 +34,6 @@ function init(){
     borders = [];
 
     makeDropdown();
-    
 
     backgrounds.push(new Sprite.fromImage("Backgrounds/bg_1.jpg"));
     backgrounds.push(new Sprite.fromImage("Backgrounds/Scroll4.bmp"));
@@ -102,7 +105,8 @@ function update(){
 function randomizeCard(){
     nStage.removeChildren();
 
-    randomizeBackground();
+    if(!bgLock)randomizeBackground();
+    nStage.addChild(background);
 
     // Gives background a nice faded out effect
     var w = new Graphics();
@@ -112,25 +116,27 @@ function randomizeCard(){
     w.alpha = 0.4;
     nStage.addChild(w);
 
-    randomizeBorder();
-    //randomizeCaption();
-    randomizePhrase();
-    randomizeNouns();
-    console.log(phrase.text);
-    console.log(noun.text);
+    if(!borderLock)randomizeBorder();
+    if(!phraseLock)
+        randomizePhrase();
+        
 
-    if (noun.text == "covfefe"){
+    if(!nounLock)randomizeNouns();
+
+     if (noun.text == "covfefe"){
         words = phrase.text.split(" ");
         phrase.text = "";
-        for (var i = 0; i < wordcount.length / 2;i++){
+        for (var i = 0; i < words.length / 2;i++){
             phrase.text = phrase.text.concat(words[i]);
+            phrase.text = phrase.text.concat(" ");
         } 
-	phrase.text = phrase.text.concat(noun.text);
+	    phrase.text = phrase.text.concat(noun.text);
     }
 
     phrase.text = phrase.text.replace("<noun>", noun.text);
     phrase.text = phrase.text.replace("!.", "!");
     phrase.text = phrase.text.replace("?.", "?");
+    nStage.addChild(border);
     nStage.addChild(caption);
     nStage.addChild(phrase);
     stage = nStage;
@@ -139,12 +145,12 @@ function randomizeCard(){
 function randomizeBackground(){
     // Background Selection
     var randomBG = Math.floor(Math.random() * backgrounds.length);
-    nStage.addChild(backgrounds[randomBG]);
+    background = backgrounds[randomBG];
 }
 
 function randomizeBorder(){
     var random = Math.floor(Math.random() * borders.length);
-    nStage.addChild(borders[random]);
+    border = borders[random];
 }
 
 function randomizePhrase(){
@@ -165,7 +171,7 @@ function randomizePhrase(){
 function randomizeNouns(){
     var random = Math.floor(Math.random() * Nouns.length);
     noun = new Text(
-        Nouns[random],
+        Nouns[13],
         {fontFamily: "Georgia",
          fontSize: 32,
          fill: "black",
@@ -225,6 +231,37 @@ function setCaption(){
     caption.anchor.set(0.5,0.5);
     caption.position.set(canvasWidth / 2, 175);
     stage.addChild(caption);
+}
+
+function lockHit(num){
+    var button = document.getElementById("button" + num);
+    var isLocked = (button.value == 'true');
+    switch(num){
+        case 0:
+            bgLock = !isLocked;
+            break;
+        case 1:
+            borderLock = !isLocked;
+            break; 
+        case 2:
+            phraseLock = !isLocked;
+            break; 
+        case 3:
+            nounLock = !isLocked;
+            break;  
+    }
+    if(isLocked){
+        button.src = "Buttons/UnlockButton.png"
+    } else {
+        button.src = "Buttons/LockButton.png"
+    }
+
+    if(isLocked){
+        button.value = false;
+    } else {
+        button.value = true;
+    }
+    
 }
 
 load();
