@@ -122,14 +122,17 @@ function randomizeCard(){
         
 
     if(!nounLock)randomizeNouns();
+
      if (noun.text == "covfefe"){
         words = phrase.text.split(" ");
         phrase.text = "";
-        for (var i = 0; i < wordcount.length / 2;i++){
+        for (var i = 0; i < words.length / 2;i++){
             phrase.text = phrase.text.concat(words[i]);
+            phrase.text = phrase.text.concat(" ");
         } 
 	    phrase.text = phrase.text.concat(noun.text);
     }
+
     phrase.text = phrase.text.replace("<noun>", noun.text);
     phrase.text = phrase.text.replace("!.", "!");
     phrase.text = phrase.text.replace("?.", "?");
@@ -168,7 +171,7 @@ function randomizePhrase(){
 function randomizeNouns(){
     var random = Math.floor(Math.random() * Nouns.length);
     noun = new Text(
-        Nouns[random],
+        Nouns[13],
         {fontFamily: "Georgia",
          fontSize: 32,
          fill: "black",
