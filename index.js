@@ -19,7 +19,7 @@ var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
 var c = document.getElementById("myCanvas").appendChild(renderer.view);
 
 var backgrounds, borders;
-var phrase, noun, caption, border, background;
+var phrase, noun, caption, border, background, signature;
 var phraseLock = false;
 var nounLock = false;
 var borderLock = false;
@@ -125,7 +125,7 @@ function randomizeCard(){
     }
     if(!phraseLock){
         randomizePhrase();
-        oldphrase = phrase;//This stores the phrase with <noun> tag.
+        oldphrase = phrase.text;//This stores the phrase with <noun> tag.
     }
     else{
         phrase.text = oldphrase;//This sets the phrase <noun> tags to be replaced again, with possibly new noun.
@@ -290,6 +290,10 @@ function lockHit(num){
         button.value = true;
     }
     
+}
+
+function changeSignature(){
+
 }
 
 load();
