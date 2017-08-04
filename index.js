@@ -16,7 +16,7 @@ var canvasHeight = 700;
 var stage = new Container();
 var nStage = new Container();
 var renderer = autoDetectRenderer(canvasWidth, canvasHeight);
-document.body.appendChild(renderer.view);
+var c = document.getElementById("myCanvas").appendChild(renderer.view);
 
 var backgrounds, borders;
 var phrase, noun, caption;

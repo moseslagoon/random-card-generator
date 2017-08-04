@@ -12,8 +12,9 @@ const Phrases = [
 "If I could give you one piece of advice, it would be: Remember",
 "It's over Anakin. I have",
 "I love you for so many reasons, especially",
-"Through this and thin I can always rely on your love for"
+"Through this and thin I can always rely on your love for",
 "You remind me to always be thankful for",
+<<<<<<< HEAD
 "I wrote you a love song, I call it"
 "If you and I had a love song, it would be called"
 "To a special friend, who always brought me",
@@ -30,4 +31,7 @@ const Phrases = [
 "Shh... don't say anything, I understand everything now, even",
 "Without you, I would have no idea how to deal with",
 "We could be happy ever after... Just you, me, and",
-"You've always been my favorite I superhero, well... next to"];
+"You've always been my favorite I superhero, well... next to",
+"I wrote you a love song, I call it",
+"If you and I had a love song, it would be called",
+"To a special friend, who always brought me"];
