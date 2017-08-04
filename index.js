@@ -132,7 +132,7 @@ function randomizePhrase(){
 function randomizeNouns(){
     var random = Math.floor(Math.random() * Nouns.length);
     noun = new Text(
-        Nouns[random],
+        Nouns[0],
         {fontFamily: "Georgia",
          fontSize: 32,
          fill: "black",
@@ -161,6 +161,10 @@ function randomizeCaption(){
     caption.anchor.set(0.5,0.5);
     caption.position.set(canvasWidth / 2, 175);
     nStage.addChild(caption);
+}
+
+function makeDropdown(){
+    
 }
 
 function setCaption(){
