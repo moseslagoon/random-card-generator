@@ -253,6 +253,45 @@ function setCaption(){
         case "Happy Birthday!":
             color = "#efef00";
             break;
+        case "Happy Anniversary!":
+            color = "#502f17";
+            break;
+        case "Happy Valentines Day!":
+            color = "#ff2f17";
+            break;
+        case "Happy Mothers Day!":
+            color = "#ff2f17";
+            break;
+        case "Happy Fathers Day!":
+            color = "#017f00";
+            break;
+        case "Feel Better Soon!":
+            color = "#378cf1";
+            break;
+        case "Merry Christmas!":
+            color = "#376e6f";
+            break;
+        case "Happy Chanukah!":
+            color = "#376e6f";
+            break;
+        case "Happy Quanza!":
+            color = "#376e6f";
+            break;
+        case "Happy Thanksgiving!":
+            color = "#efef00";
+            break;
+        case "Thinking of You":
+            color = "#37e16f";
+            break;
+        case "I'm Sorry":
+            color = "#c6e16f";
+            break;
+        case "Thank You":
+            color = "#c6e16f";
+            break;
+        case "You've Been Bamboozled":
+            color = "#e3e1de";
+            break;
         default:
             color = 0xFFFFFF;
             break;
