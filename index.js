@@ -96,7 +96,10 @@ function randomizeCard(){
     randomizeCaption();
     randomizePhrase();
     randomizeNouns();
-    phrase = phrase.replace("<noun>", "noun.text");
+    console.log(phrase.text);
+    console.log(noun.text);
+    phrase.text = phrase.text.replace("<noun>", noun.text);
+        nStage.addChild(phrase);
     stage = nStage;
 }
 
@@ -124,7 +127,6 @@ function randomizePhrase(){
     );
     phrase.anchor.set(0.5,0.5);
     phrase.position.set(canvasWidth / 2, 350);
-    nStage.addChild(phrase);
 }
 
 function randomizeNouns(){
@@ -140,7 +142,7 @@ function randomizeNouns(){
     );
     noun.anchor.set(0.5,0);
     noun.position.set(canvasWidth / 2, phrase.position.y + phrase.height - (phrase.height / 2) + 2);
-    nStage.addChild(noun);
+    //nStage.addChild(noun);
 }
 
 function randomizeCaption(){
