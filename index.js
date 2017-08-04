@@ -62,7 +62,9 @@ function init(){
         {
             fontFamily: "Palatino Linotype",
             fontSize: 40,
-            fill: "black",
+            fill: "#efef00",
+            stroke:"black",
+            strokeThickness: 4,
             wordWrap: true,
             wordWrapWidth: 350,
             align: "center"
@@ -159,7 +161,9 @@ function randomizePhrase(){
         Phrases[random],
         {fontFamily: "Georgia",
          fontSize: 32,
-         fill: "black",
+         fill: "white",
+         stroke:"black",
+         strokeThickness: 4,
          wordWrap: true,
          wordWrapWidth:350,
          align: "center"}
@@ -171,7 +175,7 @@ function randomizePhrase(){
 function randomizeNouns(){
     var random = Math.floor(Math.random() * Nouns.length);
     noun = new Text(
-        Nouns[13],
+        Nouns[random],
         {fontFamily: "Georgia",
          fontSize: 32,
          fill: "black",
@@ -191,7 +195,9 @@ function randomizeCaption(){
         {
             fontFamily: "Palatino Linotype",
             fontSize: 40,
-            fill: "black",
+            fill: "white",
+            stroke:"black",
+            strokeThickness: 4,
             wordWrap: true,
             wordWrapWidth: 350,
             align: "center"
@@ -216,13 +222,26 @@ function makeDropdown(){
 }
 
 function setCaption(){
+    var color;
     stage.removeChild(caption);
+
+    switch(dd.value){
+        case "Happy Birthday!":
+            color = "#efef00";
+            break;
+        default:
+            color = 0xFFFFFF;
+            break;
+    }
+
     caption = new Text(
         dd.value,
         {
             fontFamily: "Palatino Linotype",
             fontSize: 40,
-            fill: "black",
+            fill: color,
+            stroke:"black",
+            strokeThickness: 4,
             wordWrap: true,
             wordWrapWidth: 350,
             align: "center"
